@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>amMap example</title>
+
+        <link rel="stylesheet" href="ammap/ammap.css" type="text/css">
+        <script src="ammap/ammap.js" type="text/javascript"></script>
+        <!-- map file should be included after ammap.js -->
+		<script src="ammap/maps/js/indonesiaHigh.js" type="text/javascript"></script>
+
+        <style type="text/css">
+
+            .amcharts-map-area-US-TX {
+                filter: url(#shadow);
+            }
+
+        </style>
+
+        <script type="text/javascript">
+        	 AmCharts.makeChart("indodivmap", {
+                "type"         : "map",
+                "pathToImages" : "ammap/images/",
+                "dataProvider" : {
+                  // "mapURL"          : "http://www.amcharts.com/lib/3/maps/svg/indonesiaHigh.svg",
+                	"map": "indonesiaHigh",
+                	"getAreasFromMap" : true,
+                	"areas": [
+                		{
+        					"title": "BBVET Denpasar",
+        					"id": "ID-BA",
+        					"color": "#26A65B",
+                            "value": "105",
+        				},
+        				{
+        					"title": "BPPV Regional III Lampung",
+        					"id": "ID-LA",
+        					"color": "#87D37C",
+                            "value": "9",
+        				}
+        			]
+                },
+
+                areasSettings: {
+                    balloonText: "[[title]] :: [[value]] item"
+                },
+              });
+		</script>
+    </head>
+
+    <body>
+        <div id="indodivmap" style="width: 100%; background-color:#EEEEEE; height: 500px;"></div>
+    </body>
+
+</html>
